@@ -16,7 +16,7 @@ class EnhancedPIDControlApp:
         self.root = root
         self.root.title("PID 调参系统")
         self.root.geometry("1200x700")  # 设置窗口大小
-        
+        self.root.iconbitmap('icon.ico')   # 更改窗口图标
         # 通信设置变量
         self.ip_address = tk.StringVar(value="172.20.10.2")
         self.port = tk.StringVar(value="80")
@@ -233,7 +233,7 @@ class EnhancedPIDControlApp:
         
         # Kp 控制
         ttk.Label(parent, text="比例系数 (Kp):").pack(anchor=tk.W, pady=(5, 0))
-        self.create_slider_and_entry(parent, kp_var, 0.0, 10.0)
+        self.create_slider_and_entry(parent, kp_var, 0.0, 100.0)
         
         # Ki 控制
         ttk.Label(parent, text="积分系数 (Ki):").pack(anchor=tk.W, pady=(10, 0))
